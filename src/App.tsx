@@ -1,6 +1,12 @@
+import Navbar from "./components/navbar";
+import Home from "./pages/home";
+
 function App() {
     return (
-        <h1>Hello, Portfolio!</h1>
+        <>
+            <Navbar />
+            <Home />
+        </>
     );
 }
 
