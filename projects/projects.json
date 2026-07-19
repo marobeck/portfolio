@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Schedule Companion",
+        "folder": "schedule-companion",
+        "thumbnail": "schedule_companion_render.png"
+    },
+    {
+        "title": "Acoustic Monitor",
+        "folder": "acoustic-monitor",
+        "thumbnail": "acoustic_monitor_render.png"
+    }
+]
