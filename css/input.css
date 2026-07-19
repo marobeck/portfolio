@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* ---------- Theme Variables ---------- */
+/* ----------------------------- Theme Variables ---------------------------- */
 
 :root {
 
@@ -20,7 +20,7 @@
     --shadow: rgba(0, 0, 0, .25);
 }
 
-/* ---------- Global Defaults ---------- */
+/* ----------------------------- Global Defaults ---------------------------- */
 
 html {
     scroll-behavior: smooth;
@@ -36,7 +36,7 @@ body {
     min-height: 100vh;
 }
 
-/* ---------- Components ---------- */
+/* ----------------------------- Components ---------------------------- */
 
 .navbar {
 
@@ -65,5 +65,21 @@ body {
     font-size: 2rem;
 
     font-weight: bold;
+
+}
+
+/* --------------------------- Project Card Styles -------------------------- */
+#project-grid {
+
+    columns: 2;
+    column-gap: 1.5rem;
+
+}
+
+.project-card {
+
+    break-inside: avoid;
+
+    margin-bottom: 1.5rem;
 
 }
