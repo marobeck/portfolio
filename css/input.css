@@ -24,6 +24,8 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    scroll-padding-top: 5rem;
 }
 
 body {
@@ -34,6 +36,33 @@ body {
     font-family: Inter, Arial, sans-serif;
 
     min-height: 100vh;
+
+    max-width: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+main {
+    width: min(100%, 72rem);
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1.25rem 1rem 2rem;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+    min-height: calc(100vh - 5rem);
 }
 
 /* ----------------------------- Components ---------------------------- */
@@ -43,7 +72,18 @@ body {
     background: var(--surface);
 
     border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
 
+}
+
+.navbar>div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
 }
 
 .card {
@@ -77,9 +117,89 @@ body {
 }
 
 .project-card {
-
     break-inside: avoid;
+}
 
-    margin-bottom: 1.5rem;
+@media (max-width: 760px) {
+    main {
+        padding: 1rem 0.875rem 1.5rem;
+    }
+
+    #project-grid {
+        columns: 2;
+        column-gap: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .project-card h2 {
+        font-size: 1rem;
+        padding: 0.875rem;
+    }
+}
+
+.project-card {
+
+    display: block;
+
+    background: var(--surface);
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    text-decoration: none;
+
+    color: inherit;
+
+    transition: .25s;
+
+}
+
+.project-card.no-image {
+
+    min-height: 180px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+}
+
+.project-card:hover {
+
+    transform: translateY(-4px);
+
+}
+
+.project-card img {
+
+    width: 100%;
+
+    display: block;
+
+}
+
+.project-card h2 {
+
+    padding: 1rem;
+
+    font-size: 1.25rem;
+
+}
+
+/* --------------------------- Project page styles -------------------------- */
+
+.markdown-body {
+
+    max-width: 100%;
+
+    margin: auto;
 
 }

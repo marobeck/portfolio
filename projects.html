@@ -20,10 +20,60 @@
 
     <main class="container mx-auto px-8 py-8">
 
+        <h1 class="text-center text-3xl font-bold mb-8">Projects.</h1>
+
         <div id="project-grid"></div>
 
     </main>
 
 </body>
+
+<script>
+    async function loadProjects() {
+
+        const response = await fetch("projects/projects.json");
+        const projects = await response.json();
+
+        const grid = document.getElementById("project-grid");
+
+        projects.forEach(project => {
+
+            const card = document.createElement("a");
+
+            card.className = "project-card";
+
+            card.href = `project.html?id=${project.folder}`;
+
+            if (project.thumbnail) {
+
+                const img = document.createElement("img");
+
+                img.src = `projects/${project.folder}/${project.thumbnail}`;
+
+                img.alt = project.title;
+
+                img.onerror = () => img.remove();
+
+                card.appendChild(img);
+
+            }
+            else {
+                card.classList.add("no-image");
+            }
+
+            const title = document.createElement("h2");
+
+            title.textContent = project.title;
+
+            card.appendChild(title);
+
+            grid.appendChild(card);
+
+        });
+
+    }
+
+    loadProjects();
+</script>
 
 </html>
