@@ -194,6 +194,32 @@ main {
 
 }
 
+.project-filter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.project-filter button {
+    background: var(--surface);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.project-filter button:hover {
+    color: var(--text-primary);
+}
+
+.project-filter button.active {
+    background: var(--accent);
+    color: white;
+}
+
 /* --------------------------- Project page styles -------------------------- */
 
 .markdown-body {

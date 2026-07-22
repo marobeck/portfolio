@@ -22,6 +22,18 @@
 
         <h1 class="text-center text-3xl font-bold mb-8">Projects.</h1>
 
+        <div class="project-filter text-center">
+            <button class="active" data-filter="technical">
+                Technical Projects
+            </button>
+
+            <button data-filter="game">
+                Games
+            </button>
+        </div>
+
+        <br>
+
         <div id="project-grid"></div>
 
     </main>
@@ -29,43 +41,104 @@
 </body>
 
 <script>
+    let currentFilter = "technical";
+    let allProjects = [];
+
     async function loadProjects() {
 
         const response = await fetch("projects/projects.json");
-        const projects = await response.json();
+        allProjects = await response.json();
+
+        displayProjects();
+
+    }
+
+    function displayProjects() {
 
         const grid = document.getElementById("project-grid");
 
-        projects.forEach(project => {
+        // Remove existing cards
+        grid.innerHTML = "";
+
+        // Filter projects
+        const filteredProjects = allProjects.filter(project =>
+            project.type === currentFilter
+        );
+
+        filteredProjects.forEach(project => {
 
             const card = document.createElement("a");
-
             card.className = "project-card";
 
-            card.href = `project.html?id=${project.folder}`;
+            //----------------------------------------
+            // Determine destination
+            //----------------------------------------
+
+            if (project.type === "technical") {
+
+                card.href = `project.html?id=${project.folder}`;
+
+            }
+            else if (project.type === "game") {
+
+                card.href = project.url;
+                card.target = "_blank";
+                card.rel = "noopener noreferrer";
+
+            }
+
+            //----------------------------------------
+            // Thumbnail
+            //----------------------------------------
 
             if (project.thumbnail) {
 
                 const img = document.createElement("img");
 
-                img.src = `projects/${project.folder}/${project.thumbnail}`;
+                if (project.type === "technical")
+                    img.src = `projects/${project.folder}/${project.thumbnail}`;
+                else
+                    img.src = `projects/covers/${project.thumbnail}`;
 
                 img.alt = project.title;
 
-                img.onerror = () => img.remove();
+                img.onerror = () => {
+
+                    img.remove();
+                    card.classList.add("no-image");
+
+                };
 
                 card.appendChild(img);
 
             }
             else {
+
                 card.classList.add("no-image");
+
             }
 
+            //----------------------------------------
+            // Title
+            //----------------------------------------
+
             const title = document.createElement("h2");
-
             title.textContent = project.title;
-
             card.appendChild(title);
+
+            //----------------------------------------
+            // Game Role
+            //----------------------------------------
+
+            if (project.type === "game" && project.role) {
+
+                const role = document.createElement("p");
+                role.className = "project-role";
+                role.textContent = project.role;
+
+                card.appendChild(role);
+
+            }
 
             grid.appendChild(card);
 
@@ -73,7 +146,29 @@
 
     }
 
+    //----------------------------------------
+    // Filter Buttons
+    //----------------------------------------
+
+    document.querySelectorAll(".project-filter button").forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            currentFilter = button.dataset.filter;
+
+            document.querySelectorAll(".project-filter button")
+                .forEach(b => b.classList.remove("active"));
+
+            button.classList.add("active");
+
+            displayProjects();
+
+        });
+
+    });
+
     loadProjects();
+
 </script>
 
 </html>
