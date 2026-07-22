@@ -1,12 +1,42 @@
 [
     {
         "title": "Schedule Companion",
+        "type": "technical",
         "folder": "schedule-companion",
         "thumbnail": "schedule_companion_render.png"
     },
     {
         "title": "Acoustic Monitor",
+        "type": "technical",
         "folder": "acoustic-monitor",
-        "thumbnail": "acoustic_monitor_render.png"
+        "thumbnail": "breadboard.jpg"
+    },
+    {
+        "title": "Well Witches",
+        "type": "game",
+        "thumbnail": "well_witches.png",
+        "url": "https://game-design-art-collab.itch.io/well-witches",
+        "role": "Ability Programming"
+    },
+    {
+        "title": "Malisense",
+        "type": "game",
+        "thumbnail": "malisense.png",
+        "url": "https://game-design-art-collab.itch.io/malisense",
+        "role": "AI Programming"
+    },
+    {
+        "title": "Taco Cat",
+        "type": "game",
+        "thumbnail": "taco_cat.png",
+        "url": "https://game-design-art-collab.itch.io/tacocat",
+        "role": "UI Programming"
+    },
+    {
+        "title": "Trigger Treat",
+        "type": "game",
+        "thumbnail": "trigger_treat.png",
+        "url": "https://vitic.itch.io/trigger-treat",
+        "role": "Programming"
     }
 ]
