@@ -18,6 +18,16 @@
         </div>
     </nav>
 
+    <nav class="mobile-nav">
+        <select onchange="window.location=this.value">
+
+            <option value="index.html">Home</option>
+            <option value="resume.html">Resume</option>
+            <option selected value="projects.html"> Projects </option>
+
+        </select>
+    </nav>
+
     <main class="container mx-auto px-8 py-8">
 
         <h1 class="text-center text-3xl font-bold mb-8">Projects.</h1>
@@ -122,9 +132,14 @@
             // Title
             //----------------------------------------
 
+            const overlay = document.createElement("div");
+            overlay.className = "project-overlay";
+
             const title = document.createElement("h2");
             title.textContent = project.title;
-            card.appendChild(title);
+            overlay.appendChild(title);
+
+            card.appendChild(overlay);
 
             //----------------------------------------
             // Game Role
@@ -136,7 +151,7 @@
                 role.className = "project-role";
                 role.textContent = project.role;
 
-                card.appendChild(role);
+                overlay.appendChild(role);
 
             }
 

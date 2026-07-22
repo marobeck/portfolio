@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Mason Becker - Resume</title>
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body class="bg-zinc-900 text-white">
 
     <nav class="navbar p-4 shadow">
@@ -16,17 +18,29 @@
         </div>
     </nav>
 
+    <nav class="mobile-nav">
+        <select onchange="window.location=this.value">
+
+            <option value="index.html">Home</option>
+            <option selected value="resume.html">Resume</option>
+            <option value="projects.html"> Projects </option>
+
+        </select>
+    </nav>
+
     <main class="justify-center items-center h-[90vh]">
 
         <h1 class="text-center text-3xl font-bold mb-8">Resume</h1>
         <br>
 
         <!-- Introduction -->
-        <p>I'm a passionate Computer Engineer graduate from the University of California, Santa Cruz, with a strong foundation in software development and hardware-software integration.</p>
+        <p>I'm a passionate Computer Engineer graduate from the University of California, Santa Cruz, with a strong
+            foundation in software development and hardware-software integration.</p>
 
         <!-- Resume -->
-        <img src="images/resume.png" alt="Mason Becker Resume" class="mt-4 w-[80vw] h-auto">
+        <img src="images/resume.png" alt="Mason Becker Resume" class="mt-4 w-[80vw] h-auto text-center mx-auto">
 
     </main>
 </body>
+
 </html>
