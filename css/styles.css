@@ -598,6 +598,12 @@ main {
   margin: 1rem 0;
   padding-left: 2rem;
 }
+.markdown-body ul {
+  list-style-type: disc;
+}
+.markdown-body ol {
+  list-style-type: decimal;
+}
 .markdown-body li {
   margin: .35rem 0;
 }
