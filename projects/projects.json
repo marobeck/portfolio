@@ -12,6 +12,12 @@
         "thumbnail": "breadboard.jpg"
     },
     {
+        "title": "Photo Dojo Controller",
+        "type": "technical",
+        "folder": "furry-dojo",
+        "thumbnail": "title.png"
+    },
+    {
         "title": "Well Witches",
         "type": "game",
         "thumbnail": "well_witches.png",
