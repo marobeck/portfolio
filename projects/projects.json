@@ -12,11 +12,18 @@
         "thumbnail": "breadboard.jpg"
     },
     {
+        "title": "mCal2",
+        "type": "technical",
+        "folder": "mCal2",
+        "thumbnail": "mCal-thumb.png"
+    },
+    {
         "title": "Photo Dojo Controller",
         "type": "technical",
         "folder": "furry-dojo",
         "thumbnail": "title.png"
     },
+    
     {
         "title": "Well Witches",
         "type": "game",
